@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Image Processor Web Application
 
 This is a simple image processing web application that allows users to upload `.jpg` images, display them in a gallery, and generate a URL to resize any selected image.
@@ -34,3 +35,6 @@ This backend application provides APIs for uploading and processing images. It a
 - **Node.js**: Ensure you have Node.js installed to run the backend.
 - **Dependencies**: This project uses `express`, `multer`, `sharp`, and `fs`.
 
+=======
+# NEW
+>>>>>>> 417ae30fa3deb521e5f317b082953ab6c74632e3
