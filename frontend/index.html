@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Processor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Image Processor</h1>
+
+    <!-- Image Upload Form -->
+    <form id="uploadForm">
+      <input type="file" id="uploadInput" accept=".jpg" />
+      <button type="submit">Upload Image</button>
+      <p class="error" id="uploadError"></p>
+    </form>
+
+    <!-- Image Gallery -->
+    <h2>Gallery</h2>
+    <div id="gallery" class="gallery"></div>
+
+    <!-- Resize Form -->
+    <h2>Resize Image</h2>
+    <form id="resizeForm">
+      <input type="text" id="selectedImage" placeholder="Select image from gallery" readonly />
+      <input type="number" id="width" placeholder="Width" required />
+      <input type="number" id="height" placeholder="Height" required />
+      <button type="submit">Generate URL</button>
+    </form>
+
+    <p>API URL: <span id="apiUrl"></span></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
