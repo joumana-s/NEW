@@ -1,7 +1,9 @@
+/// <reference types="jasmine" />
+
 import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
-import { resizeImage } from '../src/utils/imageProcessor'; // adjust path to your file
+import { resizeImage } from '../src/utils/imageProcessor'; // adjust path
 
 describe('Image Processing - resizeImage', () => {
   const inputPath = path.join(__dirname, 'test-assets', 'input.jpg');
@@ -9,12 +11,12 @@ describe('Image Processing - resizeImage', () => {
   const width = 100;
   const height = 100;
 
-  beforeAll(() => {
+  beforeAll(async () => {
     // Ensure test-assets folder exists
     fs.mkdirSync(path.dirname(inputPath), { recursive: true });
 
     // Create a dummy input image (200x200 px)
-    return sharp({
+    await sharp({
       create: {
         width: 200,
         height: 200,

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Image Processor Web Application
 
 This is a simple image processing web application that allows users to upload `.jpg` images, display them in a gallery, and generate a URL to resize any selected image.
@@ -38,3 +39,6 @@ This backend application provides APIs for uploading and processing images. It a
 =======
 # NEW
 >>>>>>> 417ae30fa3deb521e5f317b082953ab6c74632e3
+=======
+
+>>>>>>> 5f2a69777fd6b77148e6ccb621dc3756fc89ec99

@@ -4,13 +4,16 @@
     "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "rootDir": "./backend/src",
+    "types": ["jasmine", "node"]
   },
   "include": [
-    "backend/**/*.ts","tests/**/*.ts"
+    "backend/src/**/*.ts"
   ],
   "exclude": [
     "node_modules",
-    "frontend"
+    "frontend",
+    "tests"
   ]
 }

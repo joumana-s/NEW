@@ -1,12 +1,12 @@
+/// <reference types="jasmine" />
+
 import request from 'supertest';
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
 import imageRoutes from '../src/routes/imageRoutes';
+import * as imageProcessor from '../src/utils/imageProcessor'; // Import module to spy on
 
-jest.mock('../src/utils/imageProcessor', () => ({
-  resizeImage: jest.fn().mockResolvedValue(undefined),
-}));
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -15,16 +15,13 @@ app.use('/api/images', imageRoutes);
 const imagesFolder = path.resolve(__dirname, '../../../images');
 const testImagePath = path.join(imagesFolder, 'test.jpg');
 
-// Mock resizeImage util
-jest.mock('../../utils/imageProcessor', () => ({
-  resizeImage: jest.fn().mockResolvedValue(undefined),
-}));
-
 describe('Image Routes', () => {
   beforeAll(() => {
-    // Ensure test image exists
     if (!fs.existsSync(imagesFolder)) fs.mkdirSync(imagesFolder, { recursive: true });
     fs.writeFileSync(testImagePath, Buffer.alloc(10)); // Create dummy file
+
+    // Spy on resizeImage and mock its implementation to return a resolved Promise
+    spyOn(imageProcessor, 'resizeImage').and.returnValue(Promise.resolve(undefined));
   });
 
   afterAll(() => {
