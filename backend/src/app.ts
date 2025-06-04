@@ -1,4 +1,4 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express, { Request, Response } from 'express';
 import path from 'path';
 import fs from 'fs';
 import imageRoutes from './routes/imageRoutes';

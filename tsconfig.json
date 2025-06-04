@@ -5,15 +5,15 @@
     "strict": true,
     "esModuleInterop": true,
     "outDir": "./dist",
-    "rootDir": "./backend/src",
+    "rootDir": ".",
     "types": ["jasmine", "node"]
   },
   "include": [
-    "backend/src/**/*.ts"
+    "backend/**/*.ts"
   ],
   "exclude": [
     "node_modules",
     "frontend",
-    "tests"
+    "dist"
   ]
 }
