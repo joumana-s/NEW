@@ -1,6 +1,6 @@
-import { register } from 'ts-node';
-
-register({
-  project: './backend/tests/tsconfig.json',
-  transpileOnly: true
-}); 
+require('ts-node').register({
+  transpileOnly: true,
+  compilerOptions: {
+    module: 'commonjs'
+  }
+});
