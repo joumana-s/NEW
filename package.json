@@ -6,9 +6,10 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon --watch \"backend/**/*.ts\" --exec ts-node backend/src/server.ts",
-    "build": "tsc",
-    "start": "node dist/server.js",
-    "test": "node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm ./spec/support/ts-node-register.js ./node_modules/jasmine/bin/jasmine.js",
+    "build": "rimraf dist && tsc",
+    "start": "node --experimental-specifier-resolution=node dist/src/server.js",
+    "start:prod": "npm run build && node --experimental-specifier-resolution=node dist/src/server.js",
+    "test": "node --experimental-vm-modules --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm ./spec/support/ts-node-register.js ./node_modules/jasmine/bin/jasmine.js",
     "test:debug": "node --inspect-brk --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm ./spec/support/ts-node-register.js ./node_modules/jasmine/bin/jasmine.js",
     "lint": "eslint \"backend/src/**/*.ts\" \"backend/tests/**/*.ts\""
   },
@@ -35,6 +36,7 @@
     "jasmine-ts": "^0.4.0",
     "nodemon": "^3.1.10",
     "prettier": "^3.5.3",
+    "rimraf": "^5.0.10",
     "supertest": "^7.1.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",

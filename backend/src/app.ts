@@ -3,9 +3,12 @@ import path from 'path';
 import multer from 'multer';
 import sharp from 'sharp';
 import fs from 'fs';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = 3000;
 
 // Configure multer for handling file uploads
 const storage = multer.diskStorage({
@@ -66,7 +69,8 @@ app.get('/resize', async (req, res) => {
 
     res.set('Content-Type', 'image/jpeg');
     res.send(resizedImage);
-  } catch (error) {
+  } catch (err) {
+    console.error('Error processing image:', err);
     res.status(500).json({ error: 'Error processing image' });
   }
 });

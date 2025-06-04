@@ -3,7 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
-import { resizeImage } from '../src/utils/imageProcessor.ts';
+import { resizeImage } from '../src/utils/imageProcessor';
 
 
 describe('Image Processing - resizeImage', () => {

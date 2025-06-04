@@ -1,7 +1,7 @@
 /// <reference types="jasmine" />
 
 import request from 'supertest';
-import { app } from '../src/app';
+import app from '../src/app';
 import { setup, cleanup } from './helpers/testSetup';
 import path from 'path';
 import fs from 'fs';

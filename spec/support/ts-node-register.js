@@ -1,6 +1,10 @@
-require('ts-node').register({
+import { register } from 'ts-node';
+
+register({
   transpileOnly: true,
   compilerOptions: {
-    module: 'commonjs'
-  }
+    module: 'ES2020',
+    moduleResolution: 'node'
+  },
+  esm: true
 });
