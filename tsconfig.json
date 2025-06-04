@@ -5,15 +5,18 @@
     "strict": true,
     "esModuleInterop": true,
     "outDir": "./dist",
-    "rootDir": "./backend/src",
-    "types": ["jasmine", "node"]
+    "rootDir": "./", 
+    "types": ["jasmine", "node"],
+    "allowImportingTsExtensions": true,
+    "noEmit": true
   },
   "include": [
-    "backend/src/**/*.ts"
+    "backend/src/**/*.ts",
+    "backend/tests/**/*.ts",
+    "spec/support/**/*.ts"
   ],
   "exclude": [
     "node_modules",
-    "frontend",
-    "tests"
+    "frontend"
   ]
 }

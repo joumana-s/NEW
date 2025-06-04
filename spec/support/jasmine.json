@@ -1,12 +1,11 @@
 {
   "spec_dir": "backend/tests",
   "spec_files": [
-    "**/*.spec.ts"
+    "**/*[sS]pec.ts"
   ],
   "helpers": [
-    "spec/support/ts-node-register.js"
+    "helpers/**/*.ts"
   ],
   "stopSpecOnExpectationFailure": false,
-  "random": true,
-  "forbidDuplicateNames": true
+  "random": false
 }

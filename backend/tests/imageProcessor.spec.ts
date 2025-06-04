@@ -3,7 +3,8 @@
 import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
-import { resizeImage } from '../src/utils/imageProcessor'; // adjust path
+import { resizeImage } from '../src/utils/imageProcessor.ts';
+
 
 describe('Image Processing - resizeImage', () => {
   const inputPath = path.join(__dirname, 'test-assets', 'input.jpg');
